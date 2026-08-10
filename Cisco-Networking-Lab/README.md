@@ -27,7 +27,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 
 ## 🛠️ Key Technical Implementations
 
-1. **VLSM / CIDR Subnetting:** Efficient IPv4 address space allocation custom-sized for individual departmental host capacities.
+1. **VLSM / CIDR Subnetting:** IPv4 address space allocation custom-sized for individual departmental host capacities.
 2. **VLAN Segmentation & Trunking (802.1Q):** Dynamic isolation of department traffic across MDF/IDF trunk links.
 3. **Centralized DHCP Relay Agent:** `MAIN_ROUTER` captures Layer 2 broadcast DHCP requests on subinterfaces and forwards them as unicast packets to the central `Server0` via `ip helper-address`.
 4. **Layer 2 Infrastructure Hardening (Unused Port Management):** To prevent unauthorized physical access and mitigate default VLAN 1 exploitation, all unused/unassigned ports across the MDF and IDF switches are assigned to a dedicated unused parking VLAN and administratively disabled (`shutdown`).
@@ -40,15 +40,14 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 ### Scenario 1: Baseline Operational State
 * **Status:** All trunk links active, subinterfaces operational, and end devices across all VLANs successfully acquire lease IPs from `Server0`.
 
-### Scenario 2: Rogue DHCP / Consumer AP Conflict in HR Department
-* **Symptom:** HR workstations failing to reach the central gateway or receiving unauthorized IP pool leases.
+### Scenario 2: Provisioning of home router as an AP to the HR Department
 * **Root Cause:** A consumer router (`PT-AC`) placed in HR was running active DHCP/NAT out of the box, conflicting with `Server0`.
 * **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port `G0/2` to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH (Fa0/2)` to allow bridged wireless client traffic.
 
-### Scenario 3: Trunk Link Misconfiguration & VLAN Pruning
-* **Symptom:** Inter-VLAN communication loss between IDF switches and `MDF_SWITCH`.
-* **Root Cause:** Misconfigured 802.1Q trunking encapsulation or missing allowed VLAN lists on switch-to-switch links.
-* **Fix Applied:** Re-established `switchport mode trunk` and verified native VLAN alignment across all MDF/IDF links.
+### Scenario 3: Trunk Link Misconfiguration on PC0
+* **Symptom:** PC0 getting APIPA.
+* **Root Cause:** Misconfigured Fa0/5 interface on COMLAB_SWITCH, configured as shutdown and placed in VLAN 100 as unused port.
+* **Fix Applied:** Re-configured the Fa0/5 interface, accessing the VLAN 10 to align with the computer laboratory default gateway.
 
 ### Scenario 4: Guest Wi-Fi Access Point Port Misconfiguration
 * **Symptom:** Wireless guest users unable to pull IP addresses or connect to the Helpdesk Access Point (`AP 1`).
@@ -59,9 +58,9 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 
 ## 💡 Practical Skills Practiced
 
-* **Layer 2 & Layer 3 Troubleshooting:** Isolating faults across physical, data link, and network layers.
-* **Cisco IOS CLI Mastery:** Commands including `show ip dhcp binding`, `show interfaces trunk`, `show port-security interface`, and `show ip route`.
-* **Enterprise Infrastructure Design:** Implementing structured cabling standards (MDF/IDF) and security hardening.
-* **Technical Documentation:** Maintaining clean network topologies, IP addressing tables, and ticket resolution logs.
+1. **Integration of VLANs and inter-VLAN routing.** 
+2. **DHCP Relay distribution to different VLANs.**
+3. **VLSM/CIDR Subnetting.** 
+4. **Proper documentation.**
 
 ---
