@@ -1,1 +1,42 @@
+Assumed planned hosts for each department:
++-----------------------------------+-------------------+------------------+---------------+
+| Department / VLAN                 | Topology Canvas   | Planned Capacity | Allocated CIDR|
+|                                   | (Active Icons)    | (Hosts + Growth) | Block Size    |
++-----------------------------------+-------------------+------------------+---------------+
+| VLAN 10 (COMLAB)                  | 5 devices         | 25-30 hosts      | /27 (30 hosts)|
+| VLAN 20 (HR_DEPT)                 | 3 devices         | 10-14 hosts      | /28 (14 hosts)|
+| VLAN 30 (IT_DEPT)                 | 2 devices         | 10-14 hosts      | /28 (14 hosts)|
+| VLAN 40 (GUEST_WIFI)              | 2 devices         | 10-14 hosts      | /28 (14 hosts)|
+| VLAN 50 (Servers)                 | 1 device          | 4-6 hosts        | /29 (6 hosts) |
++-----------------------------------+-------------------+------------------+---------------+
+
+Given Base Network: 192.168.10.0/24
+
+-- IP SUBNETTING CALCULATIONS --
+
+1st subnet (computer laboratory room):
+  Network: 192.168.10.0/27
+  Hosts: 192.168.10.1 - 192.168.10.30 (/27)
+  Broadcast: 192.168.10.31/27
+
+2nd Subnet (HR Department):
+  Network: 192.168.10.32/28
+  Hosts: 192.168.10.33 - 192.168.10.46 (/28)
+  Broadcast: 192.168.10.47/28
+
+3rd Subnet (IT Department):
+  Network: 192.168.10.48/28
+  Hosts: 192.168.10.49 - 192.168.10.62 (/28)
+  Broadcast: 192.168.10.63/28
+
+4th Subnet (Helpdesk Room - guest wifi):
+  Network: 192.168.10.64/28
+  Hosts: 192.168.10.65 - 192.168.10.78 (/28)
+  Broadcast: 192.168.10.79/28
+
+5th Subnet (Server):
+  Network: 192.168.10.80/29
+  Hosts: 192.168.10.81 - 192.168.10.86 (/29)
+  Broadcast: 192.168.10.87/29
+
 
