@@ -30,8 +30,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 1. **VLSM / CIDR Subnetting:** Efficient IPv4 address space allocation custom-sized for individual departmental host capacities.
 2. **VLAN Segmentation & Trunking (802.1Q):** Dynamic isolation of department traffic across MDF/IDF trunk links.
 3. **Centralized DHCP Relay Agent:** `MAIN_ROUTER` captures Layer 2 broadcast DHCP requests on subinterfaces and forwards them as unicast packets to the central `Server0` via `ip helper-address`.
-4. **Selective Layer 2 Port Security:** Enforced on workstation access ports (`mac-address sticky`, `maximum 1`, `violation shutdown`) to prevent unauthorized hardware insertion while allowing transparent Layer 2 AP bridging where appropriate.
-
+4. **Layer 2 Infrastructure Hardening (Unused Port Management):** To prevent unauthorized physical access and mitigate default VLAN 1 exploitation, all unused/unassigned ports across the MDF and IDF switches are assigned to a dedicated unused parking VLAN and administratively disabled (`shutdown`).
 ---
 
 ## 🧪 Simulated Real-World Break/Fix Scenarios
