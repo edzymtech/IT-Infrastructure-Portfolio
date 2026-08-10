@@ -1,1 +1,100 @@
-
+!
+hostname MAIN_ROUTER
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/0.50
+ description DEFAULT-GATEWAY-FOR-SERVER
+ encapsulation dot1Q 50
+ ip address 192.168.10.81 255.255.255.248
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1.10
+ description DEFAULT-GATEWAY-FOR-VLAN10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.224
+ ip helper-address 192.168.10.82
+!
+interface GigabitEthernet0/0/1.20
+ description DEFAULT-GATEWAY-FOR-VLAN20
+ encapsulation dot1Q 20
+ ip address 192.168.10.33 255.255.255.240
+ ip helper-address 192.168.10.82
+!
+interface GigabitEthernet0/0/1.30
+ description DEFAULT-GATEWAY-FOR-VLAN30
+ encapsulation dot1Q 30
+ ip address 192.168.10.49 255.255.255.240
+ ip helper-address 192.168.10.82
+!
+interface GigabitEthernet0/0/1.40
+ description DEFAULT-GATEWAY-FOR-VLAN40
+ encapsulation dot1Q 40
+ ip address 192.168.10.65 255.255.255.240
+ ip helper-address 192.168.10.82
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
