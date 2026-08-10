@@ -44,7 +44,7 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 * **Root Cause:** A consumer router (`PT-AC`) placed in HR was running active DHCP/NAT out of the box, conflicting with `Server0`.
 * **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port `G0/2` to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH (Fa0/2)` to allow bridged wireless client traffic.
 
-### Scenario 3: Trunk Link Misconfiguration on PC0
+### Scenario 3: VLAN Misconfiguration on PC0
 * **Symptom:** PC0 getting APIPA.
 * **Root Cause:** Misconfigured Fa0/5 interface on COMLAB_SWITCH, configured as shutdown and placed in VLAN 100 as unused port.
 * **Fix Applied:** Re-configured the Fa0/5 interface, accessing the VLAN 10 to align with the computer laboratory default gateway.
