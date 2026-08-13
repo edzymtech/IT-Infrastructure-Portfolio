@@ -1,13 +1,13 @@
 # Cisco Network Lab: Enterprise Inter-VLAN Routing, DHCP Relay & Break/Fix Simulation
 
-## 📌 Project Overview
+## Project Overview
 This repository contains a Cisco Packet Tracer simulation designed to showcase hands-on proficiency in enterprise network infrastructure, Layer 2/3 traffic management, and practical network troubleshooting. 
 
 The primary objective of this laboratory is to demonstrate **centralized IP address distribution across multiple segmented VLANs using a single central DHCP Server via `ip helper-address` (DHCP Relay)** over an enterprise MDF/IDF switch hierarchy.
 
 ---
 
-## 📐 Network Architecture & Hardware Role Inventory
+## Network Architecture & Hardware Role Inventory
 
 The topology models a multi-department enterprise network using a standard **Main Distribution Frame (MDF) and Intermediate Distribution Frame (IDF)** hierarchy:
 
@@ -25,7 +25,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 
 ---
 
-## 🛠️ Key Technical Implementations
+## Key Technical Implementations
 
 1. **VLSM / CIDR Subnetting:** IPv4 address space allocation custom-sized for individual departmental host capacities.
 2. **VLAN Segmentation & Trunking (802.1Q):** Dynamic isolation of department traffic across MDF/IDF trunk links.
@@ -33,7 +33,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 4. **Layer 2 Infrastructure Hardening (Unused Port Management):** To prevent unauthorized physical access and mitigate default VLAN 1 exploitation, all unused/unassigned ports across the MDF and IDF switches are assigned to a dedicated unused parking VLAN and administratively disabled (`shutdown`).
 ---
 
-## 🧪 Simulated Real-World Break/Fix Scenarios
+## Simulated Real-World Break/Fix Scenarios
 
 To model real-world enterprise IT support tickets, this lab includes specific "Broken vs. Fixed" troubleshooting scenarios:
 
@@ -46,7 +46,7 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 
 ---
 
-## 💡 Practical Skills Practiced
+## Practical Skills Practiced
 
 1. **Integration of VLANs and inter-VLAN routing.** 
 2. **DHCP Relay distribution to different VLANs.**
