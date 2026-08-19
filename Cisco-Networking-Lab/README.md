@@ -34,7 +34,7 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 
 ### Scenario 2: Provisioning of home router as an AP to the HR Department
 * **Root Cause:** A consumer router (`PT-AC`) placed in HR was running active DHCP/NAT out of the box, conflicting with `Server0`.
-* **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH (Fa0/2)` to allow bridged wireless client traffic.
+* **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH` to allow bridged wireless client traffic.
 
 ---
 
