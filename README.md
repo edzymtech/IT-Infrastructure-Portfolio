@@ -1,6 +1,6 @@
-## IT-Infrastructure-Portfolio
+# IT-Infrastructure-Portfolio
 
-# Cisco Network Lab: Enterprise Inter-VLAN Routing, DHCP Relay & Break/Fix Simulation
+## Cisco Network Lab: Enterprise Inter-VLAN Routing, DHCP Relay & Break/Fix Simulation
 
 ## Project Overview
 This repository contains a Cisco Packet Tracer simulation designed to showcase hands-on proficiency in enterprise network infrastructure, Layer 2/3 traffic management, and practical network troubleshooting. 
