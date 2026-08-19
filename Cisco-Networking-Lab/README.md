@@ -13,7 +13,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 | **`ITDEPT_SWITCH`** *(Switch 0)* | Cisco 2960 Switch | **IDF** servicing the IT Department (VLAN 50). |
 | **`Guest AP`** *(AP 1)* | Lightweight Access Point | Wireless Access Point broadcasting Guest Wi-Fi (VLAN 40). |
 | **`ComLab AP`** *(AP 2)* | Lightweight Access Point | Wireless Access Point broadcasting Computer Lab Wi-Fi (VLAN 10). |
-| **`HomeRouter PT-AC`** | Wireless Router (AP Mode) | Consumer router converted into a transparent Layer 2 Access Point (DHCP/NAT disabled, connected via LAN port G0/2) providing HR Wi-Fi (VLAN 20) without causing rogue DHCP conflicts. |
+| **`HomeRouter PT-AC`** | Wireless Router (AP Mode) | Consumer router converted into a transparent Layer 2 Access Point (DHCP/NAT disabled, connected via LAN port) providing HR Wi-Fi (VLAN 20) without causing rogue DHCP conflicts. |
 
 ---
 
@@ -34,7 +34,7 @@ To model real-world enterprise IT support tickets, this lab includes specific "B
 
 ### Scenario 2: Provisioning of home router as an AP to the HR Department
 * **Root Cause:** A consumer router (`PT-AC`) placed in HR was running active DHCP/NAT out of the box, conflicting with `Server0`.
-* **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port `G0/2` to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH (Fa0/2)` to allow bridged wireless client traffic.
+* **Fix Applied:** Disabled local DHCP/NAT on the home router, bypassed the WAN port, connected via LAN port to convert it into a pure **Layer 2 Access Point**, and adjusted Layer 2 Port Security policies on `HR_SWITCH (Fa0/2)` to allow bridged wireless client traffic.
 
 ---
 
