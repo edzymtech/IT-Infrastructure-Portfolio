@@ -13,6 +13,7 @@ The topology models a multi-department enterprise network using a standard **Mai
 | **`ITDEPT_SWITCH`** *(Switch 0)* | Cisco 2960 Switch | **IDF** servicing the IT Department (VLAN 50). |
 | **`Guest AP`** *(AP 1)* | Lightweight Access Point | Wireless Access Point broadcasting Guest Wi-Fi (VLAN 40). |
 | **`ComLab AP`** *(AP 2)* | Lightweight Access Point | Wireless Access Point broadcasting Computer Lab Wi-Fi (VLAN 10). |
+| **`HomeRouter PT-AC`** *(AP 1)* | Wireless Router (AP Mode) | Consumer router converted into a transparent Layer 2 Access Point (DHCP/NAT disabled, connected via LAN port G0/2) providing HR Wi-Fi (VLAN 20) without causing rogue DHCP conflicts. |
 
 ---
 
