@@ -12,4 +12,4 @@ The primary objective of this laboratory is to demonstrate centralized IP addres
 ## Active Directory Lab: Enterprise Windows Server & Inter-VLAN Routing Lab (Ongoing)
 
 ## Project Overview
-Virtualized enterprise infrastructure lab implementing domain services and client-server provisioning across segmented networks routed through Windows Server RAS.
+Virtualized enterprise infrastructure lab implementing domain services and client-server provisioning across segmented networks routed through Windows Server RRAS.
